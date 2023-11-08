@@ -7,7 +7,7 @@ ARG WINE_MONO_VERSION=4.5.6
 ENV \
     HOME="/config" \
     TITLE="ComicRack" \
-    WINEPREFIX=/config/.wine \
+    WINEPREFIX=~/.wine32 \
     WINEARCH=win32 \
     CUSTOM_PORT="9080" \
     DISABLE_IPV6="true" \
@@ -43,30 +43,20 @@ RUN \
     dpkg --add-architecture i386
 
 RUN \
+    echo "**** adding winehq sources ****" && \
+    wget -O /etc/apt/sources.list.d/winehq-jammy.sources https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources && \
+    mkdir -pm755 /etc/apt/keyrings && \
+    wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
+
+RUN \
     echo "**** install packages ****" && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
-        wget \
-        software-properties-common \
-        wine \
-        winetricks \
-        xvfb \
-        winbind
+       winehq-stable
 
 RUN \
     echo "**** creating directories ****" && \
-    mkdir -p /usr/share/wine/gecko \
-             /usr/share/wine/mono \
-             /tmp/.X11-unix && \
+    mkdir -p /tmp/.X11-unix && \
     chmod 1777 /tmp/.X11-unix
-
-RUN \
-    echo "**** download msi files ****" && \
-    wget "http://dl.winehq.org/wine/wine-gecko/${WINE_GECKO_VERSION}/wine_gecko-${WINE_GECKO_VERSION}-x86.msi" \
-            -O /usr/share/wine/gecko/wine_gecko-${WINE_GECKO_VERSION}-x86.msi && \
-    wget "http://dl.winehq.org/wine/wine-gecko/${WINE_GECKO_VERSION}/wine_gecko-${WINE_GECKO_VERSION}-x86_64.msi" \
-            -O /usr/share/wine/gecko/wine_gecko-${WINE_GECKO_VERSION}-x86_64.msi && \
-    wget "http://dl.winehq.org/wine/wine-mono/${WINE_MONO_VERSION}/wine-mono-${WINE_MONO_VERSION}.msi" \
-            -O /usr/share/wine/mono/wine-mono-${WINE_MONO_VERSION}.msi
 
 COPY /root /
