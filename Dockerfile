@@ -35,7 +35,8 @@ RUN \
     python3-xdg \
     ttf-wqy-zenhei \
     wget \
-    xz-utils
+    xz-utils \
+    vim-gtk3
 
 RUN \
     echo "**** adding i386 arch ****" && \
