@@ -7,11 +7,10 @@ ARG WINE_MONO_VERSION=4.5.6
 ENV \
     HOME="/config" \
     TITLE="ComicRack" \
-    WINEPREFIX=~/.wine32 \
+    WINEPREFIX=/config/.wine32 \
     WINEARCH=win32 \
     CUSTOM_PORT="9080" \
-    DISABLE_IPV6="true" \
-    QTWEBENGINE_DISABLE_SANDBOX="1"
+    DISABLE_IPV6="true"
 
 RUN \
   echo "**** install runtime packages ****" && \
@@ -53,10 +52,5 @@ RUN \
     apt-get update && \
     apt-get install -y --no-install-recommends \
        winehq-stable
-
-RUN \
-    echo "**** creating directories ****" && \
-    mkdir -p /tmp/.X11-unix && \
-    chmod 1777 /tmp/.X11-unix
 
 COPY /root /
