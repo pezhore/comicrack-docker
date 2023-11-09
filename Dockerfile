@@ -16,26 +16,7 @@ RUN \
   echo "**** install runtime packages ****" && \
   apt-get update && \
   apt-get install -y --no-install-recommends \
-    dbus \
-    fcitx-rime \
-    fonts-wqy-microhei \
-    libnss3 \
-    libopengl0 \
-    libqpdf28 \
-    libxkbcommon-x11-0 \
-    libxcb-icccm4 \
-    libxcb-image0 \
-    libxcb-keysyms1 \
-    libxcb-randr0 \
-    libxcb-render-util0 \
-    libxcb-xinerama0 \
-    poppler-utils \
-    python3 \
-    python3-xdg \
-    ttf-wqy-zenhei \
-    wget \
-    xz-utils \
-    vim-gtk3
+    wget
 
 RUN \
     echo "**** adding i386 arch ****" && \
@@ -47,6 +28,15 @@ RUN \
     echo "**** install packages ****" && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
-       winehq-stable
+       winehq-stable \
+       winetricks
 
 COPY /root /
+
+RUN \
+   echo "**** Comicrack Things ****" && \
+	mkdir -p /config/.wine32/drive_c/users/abc/AppData/Local/cYo/ComicRack && \
+	mkdir -p /config/.wine32/drive_c/users/abc/AppData/Roaming/cYo/ComicRack && \
+	ln -s /config/.wine32/drive_c/users/abc/AppData/Local/cYo/ComicRack /config/local && \
+	ln -s /config/.wine32/drive_c/users/abc/AppData/Roaming/cYo/ComicRack /config/roaming && \
+   chown -R abc:abc /config
