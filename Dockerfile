@@ -39,15 +39,11 @@ RUN \
 
 RUN \
     echo "**** adding i386 arch ****" && \
-    dpkg --add-architecture i386
-
-RUN \
+    dpkg --add-architecture i386  && \
     echo "**** adding winehq sources ****" && \
     wget -O /etc/apt/sources.list.d/winehq-jammy.sources https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/winehq-jammy.sources && \
     mkdir -pm755 /etc/apt/keyrings && \
-    wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key
-
-RUN \
+    wget -O /etc/apt/keyrings/winehq-archive.key https://dl.winehq.org/wine-builds/winehq.key && \
     echo "**** install packages ****" && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
