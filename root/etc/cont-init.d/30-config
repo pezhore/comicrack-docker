@@ -1,0 +1,13 @@
+#!/usr/bin/with-contenv bash
+
+
+# Symlink directories
+mkdir -p /config/.wine32/drive_c/users/abc/AppData/Local/cYo/ComicRack
+mkdir -p /config/.wine32/drive_c/users/abc/AppData/Roaming/cYo/ComicRack
+ln -s /config/.wine32/drive_c/users/abc/AppData/Local/cYo/ComicRack /config/local
+ln -s /config/.wine32/drive_c/users/abc/AppData/Roaming/cYo/ComicRack /config/roaming
+
+# permissions
+
+chown abc:abc /config
+chown -R abc:abc /config/.wine*

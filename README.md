@@ -25,6 +25,12 @@ docker run --rm \
 
 Browse to https://localhost:3001 to see comic rack!
 
+## Building from scratch (Don't do this)
+
+1. Make a `wine32` directory in the repo, then run docker mounting only the `$(pwd)/wine32` to `/config/.wine32`.
+2. in the web browser, manually run winetricks to download dotnet45, and then install comicrack itseslf. (this will populate your host's `wine32` directory.
+3. move the `$(pwd)/wine32` to `$(pwd)/root/config/.wine32` and boot again - comicrack should be installed.
+
 ## To Do
 
 - Persistence! I haven't figured out how to manage the database, so settings may not persist.

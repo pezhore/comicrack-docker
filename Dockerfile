@@ -33,10 +33,3 @@ RUN \
 
 COPY /root /
 
-RUN \
-   echo "**** Comicrack Things ****" && \
-	mkdir -p /config/.wine32/drive_c/users/abc/AppData/Local/cYo/ComicRack && \
-	mkdir -p /config/.wine32/drive_c/users/abc/AppData/Roaming/cYo/ComicRack && \
-	ln -s /config/.wine32/drive_c/users/abc/AppData/Local/cYo/ComicRack /config/local && \
-	ln -s /config/.wine32/drive_c/users/abc/AppData/Roaming/cYo/ComicRack /config/roaming && \
-   chown -R abc:abc /config

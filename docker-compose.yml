@@ -1,0 +1,36 @@
+version: "2.1"
+services:
+  mariadb:
+    image: lscr.io/linuxserver/mariadb:10.5.17
+    container_name: mariadb
+    environment:
+      - PUID=1024
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /home/lab/src/comicrack-docker/mariadb:/config
+    expose:
+      - "3306"
+    restart: unless-stopped
+    networks:
+      - comicrack
+  comicrack:
+    image: cr
+    container_name: cr
+    depends_on:
+      - mariadb
+    environment:
+      - PUID=1024
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - /home/lab/src/comicrack-docker/local:/config/local
+      - /home/lab/src/comicrack-docker/roaming:/config/roaming
+      - /mnt/ds1618/comics:/config/comics
+    ports:
+      - 9001:3001
+    networks:
+      - comicrack
+networks:
+  comicrack:
+    name: comicrack
