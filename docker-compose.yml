@@ -15,8 +15,8 @@ services:
     networks:
       - comicrack
   comicrack:
-    image: cr
-    container_name: cr
+    image: pezhore/comicrack:latest
+    container_name: comicrack
     depends_on:
       - mariadb
     environment:
