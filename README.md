@@ -8,30 +8,20 @@ I've enlisted the help of the linuxserver.io KasmVNC base image to handle the VN
 
 ## Usage
 
-1. Clone the repo
-2. Build the docker image: `docker build -t cr .`
-3. Create appropriate folders for mounting (optional?) `mkdir -p $(pwd)/roaming $(pwd)/local)`
-4. Run Docker and mount your comics library to `/config/comics`:
-
-```
-docker run --rm \
-    -e PUID=<your UID> \
-    -e PGID=<your GID> \
-    -v $(pwd)/roaming:/config/roaming:rw \
-    -v $(pwd)/local:/config/local:rw \
-    -v <path/to/comic/library>:/config/comics:rw \
-    cr
-```
-
-Browse to https://localhost:3001 to see comic rack!
+See [Getting Started](docs/getting_started.md) for more Usage details.
 
 ## Building from scratch (Don't do this)
 
-1. Make a `wine32` directory in the repo, then run docker mounting only the `$(pwd)/wine32` to `/config/.wine32`.
-2. in the web browser, manually run winetricks to download dotnet45, and then install comicrack itseslf. (this will populate your host's `wine32` directory.
-3. move the `$(pwd)/wine32` to `$(pwd)/root/config/.wine32` and boot again - comicrack should be installed.
+1. Edit the Docker file
+2. Make a `wine32` directory in the repo, then run docker mounting only the `$(pwd)/wine32` to `/config/.wine32`.
+3. in the web browser, manually run winetricks to download dotnet45, and then install comicrack itseslf. (this will populate your host's `wine32` directory.
+4. move the `$(pwd)/wine32` to `$(pwd)/root/config/.wine32` and boot again - comicrack should be installed.
 
 ## To Do
 
 - Persistence! I haven't figured out how to manage the database, so settings may not persist.
 - Scripts/plugins (see above). I also haven't figured out the best way to handle getting scripts/plugins into the container.
+- More Documentation (MariaDB backups, script/plugin installation, SOP for updating the container, etc)
+- Move the ComicRack wine prefix to a different mount point, but still maintain symlinks to `/config` to allow for
+  volume mounts (this may require some additional files in `/root/etc/cont-init.d`) The end goal would be to allow for a
+  singular volume mount `/path/to/comicrack/config:/config` without clobbering the existing wine prefix at `/config/.wine32`
