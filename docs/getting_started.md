@@ -65,3 +65,26 @@ Docker Hub and creating the `docker-compose.yml` and supplemental files yourself
    **NOTE:** The first run may result in ComicRack coming up before MariaDB does its full initialization. If so, wait
    until the docker logs indicate MariaDB has finished its setup and then issue the `docker-compose restart comicrack`
    command.
+
+
+## Building From Scratch (Don't Do This)
+
+I'll leave this here purely for historical purposes - or if you have some desire to build a fresh install of ComicRack
+yourself (or maybe you need some other abandonware wine app dockerized?). Briefly, the process is to create a
+`Dockerfile` with the base LinuxServer KasmVNC image, but run it first with the prefix folder mapped to your host. That
+way, when you run the container and manually setup Wine/your app, you capture all the prefix changes and can burn it
+into a new/final image.
+
+The process is briefly:
+
+1. Remove the `/root/config/.wine32` (or existing prefix), and change `/root/defaults/autostart` to just be `xterm`
+   (this will let you interact with the terminal of your fresh image)
+2. Make a `wine32` directory in the repo, then run docker mounting only the `$(pwd)/wine32` to `/config/.wine32` (or
+   your desired prefix location in your container).
+3. In the web browser, browse to http://localhost:3001, manually run winetricks to download dotnet45, and then install
+   comicrack itseslf. (this will populate your host's `wine32` directory. 
+   
+   **NOTE:** Make sure to cleanly exit the container when done.
+4. Move the `$(pwd)/wine32` to `$(pwd)/root/config/.wine32` (or your desired prefix location), edit the
+   `/root/defaults/autostart` to have wine execute your binary, and build the container again.
+5. Run the container again, and verify it works as expected.
