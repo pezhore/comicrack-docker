@@ -8,7 +8,7 @@ I've enlisted the help of the linuxserver.io KasmVNC base image to handle the VN
 
 ## Usage
 
-See [Getting Started](docs/getting_started.md) for more Usage details.
+See [Getting Started](docs/getting_started.md) for more usage details.
 
 ## Building from scratch (Don't do this)
 
