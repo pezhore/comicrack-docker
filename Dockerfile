@@ -7,9 +7,8 @@ ARG WINE_MONO_VERSION=4.5.6
 ENV \
     HOME="/config" \
     TITLE="ComicRack" \
-    WINEPREFIX=/config/.wine32 \
+    WINEPREFIX=/wine32 \
     WINEARCH=win32 \
-    CUSTOM_PORT="9080" \
     DISABLE_IPV6="true"
 
 RUN \
