@@ -4,7 +4,7 @@
 
 SHELL := /bin/bash
 
-NAME   := opendatasurvey
+NAME   := comicrack
 ORG    := pezhore
 REPO   := ${ORG}/${NAME}
 TAG    := $(shell git log -1 --pretty=format:"%h")
@@ -22,7 +22,7 @@ release: ## tag a release from master and push to origin
 
 
 build: ## build the Docker image for this app
-	docker build --tag $(REPO) --rm=false .
+	docker build --network=host --tag $(REPO) --rm=false .
 
 login: ## Login to docker hub
 	docker login -u $(ORG)
