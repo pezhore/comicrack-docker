@@ -28,7 +28,7 @@ services:
       - /home/lab/src/comicrack-docker/roaming:/wine32/drive_c/users/abc/AppData/Roaming/cYo/ComicRack
       - /mnt/ds1618/comics:/config/comics
     ports:
-      - 9001:3001
+      - 3001:3001
     networks:
       - comicrack
 networks:
