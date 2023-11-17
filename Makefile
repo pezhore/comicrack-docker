@@ -21,13 +21,13 @@ release: ## tag a release from master and push to origin
 	git push --tags
 
 build: ## build the Docker image for this app
-	docker build --network=host --tag $(REPO) --rm=false .
+	docker build --network=host --tag $(REPO):$(VERSION) --rm=false .
 
 login: ## Login to docker hub
 	docker login -u $(ORG)
 
 push: ## push the latest Docker image to DockerHub
-	docker push $(REPO)
+	docker push $(REPO):$(VERSION)
 
 shell: ## run an interactive bash session in the container
 	docker run -it $(REPO) /bin/bash
