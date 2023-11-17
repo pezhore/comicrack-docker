@@ -31,4 +31,5 @@ RUN \
        winetricks
 
 COPY /root /
+COPY /wine32 /wine32
 
