@@ -1,9 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-## This Config file will be used to set up the container for the first time
-## other stuff may have to go here to deal with passwords and things.
-
-
-# permissions
-chown abc:abc /config
-chown -R abc:abc /wine32
