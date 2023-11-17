@@ -4,8 +4,8 @@ services:
     image: lscr.io/linuxserver/mariadb:10.5.17
     container_name: mariadb
     environment:
-      - PUID=1024
-      - PGID=1000
+      - PUID=1024   # Change this to your user ID to preserve file permissions
+      - PGID=1000   # Change this to your group ID to preserve file permissions
       - TZ=Etc/UTC
     volumes:
       - /home/lab/src/comicrack-docker/mariadb:/config
@@ -20,15 +20,16 @@ services:
     depends_on:
       - mariadb
     environment:
-      - PUID=1024
-      - PGID=1000
+      - PUID=1024   # Change this to your user ID to preserve file permissions
+      - PGID=1000   # Change this to your group ID to preserve file permissions
       - TZ=Etc/UTC
     volumes:
       - /home/lab/src/comicrack-docker/local:/wine32/drive_c/users/abc/AppData/Local/cYo/ComicRack
       - /home/lab/src/comicrack-docker/roaming:/wine32/drive_c/users/abc/AppData/Roaming/cYo/ComicRack
       - /mnt/ds1618/comics:/config/comics
     ports:
-      - 3001:3001
+      - 3001:3001  # Default port mapping - in the case of port collision, change this to something else
+    restart: unless-stopped
     networks:
       - comicrack
 networks:
