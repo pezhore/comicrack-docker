@@ -1,3 +1,2 @@
-xterm
 sudo chown -R abc:abc /wine32
 wine /wine32/drive_c/Program\ Files/ComicRack/ComicRack.exe
