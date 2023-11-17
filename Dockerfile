@@ -7,6 +7,7 @@ ARG WINE_MONO_VERSION=4.5.6
 ENV \
     HOME="/config" \
     TITLE="ComicRack" \
+    WINEPREFIX=/wine32 \
     WINEARCH=win32 \
     DISABLE_IPV6="true"
 
@@ -30,5 +31,5 @@ RUN \
        winetricks
 
 COPY /root /
-COPY --chown=abc:abc /wine32 /wine32
+COPY /wine32 /wine32
 
