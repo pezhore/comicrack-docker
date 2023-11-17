@@ -1,9 +1,10 @@
 <?xml version="1.0"?>
-<ComicDatabase xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="13462e7d-9c98-459c-977e-52d619048545">
+<ComicDatabase xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Id="b00e8b07-5ea0-4f29-911c-a116b5d289a9">
   <Books />
   <ComicLists>
-    <Item xsi:type="ComicLibraryListItem" Id="32102b93-e083-4fb3-9f73-56a3daa365ba" Name="Library">
-      <NewBookCountDate>2023-11-10T23:25:23.3948891Z</NewBookCountDate>
+    <Item xsi:type="ComicLibraryListItem" Id="46d7f851-6785-4930-a87a-f78796425eb1" Name="Library">
+      <NewBookCountDate>2023-11-17T16:56:07.9048367Z</NewBookCountDate>
+      <CacheStorage>Custom</CacheStorage>
       <Display>
         <View ItemViewMode="Thumbnail" SortKey="100">
           <Columns>
@@ -118,12 +119,14 @@
         <ShowGroupHeadersWidth>469</ShowGroupHeadersWidth>
       </Display>
     </Item>
-    <Item xsi:type="ComicListItemFolder" Id="b3e637c9-8639-42c2-bab5-c2f8697734c5" Name="Smart Lists">
-      <NewBookCountDate>2023-11-10T23:25:24.5455948Z</NewBookCountDate>
+    <Item xsi:type="ComicListItemFolder" Id="0df0bcb5-fa33-40e2-9a27-c18ac15de3df" Name="Smart Lists">
+      <NewBookCountDate>2023-11-17T16:56:09.7529271Z</NewBookCountDate>
+      <CacheStorage />
       <Display />
       <Items>
-        <Item xsi:type="ComicSmartListItem" Id="c11ec688-7321-4d4d-86aa-ddfa66a35977" Name="My Favorites">
-          <NewBookCountDate>2023-11-10T23:25:24.5424861Z</NewBookCountDate>
+        <Item xsi:type="ComicSmartListItem" Id="bed14d46-0e1f-4f54-ab89-a16797bedb6b" Name="My Favorites">
+          <NewBookCountDate>2023-11-17T16:56:09.7308556Z</NewBookCountDate>
+          <CacheStorage />
           <Display />
           <Matchers>
             <ComicBookMatcher xsi:type="ComicBookRatingMatcher" MatchOperator="1">
@@ -131,8 +134,9 @@
             </ComicBookMatcher>
           </Matchers>
         </Item>
-        <Item xsi:type="ComicSmartListItem" Id="efad9e39-a3b0-47bb-93ce-23d4b0af7e54" Name="Recently Added">
-          <NewBookCountDate>2023-11-10T23:25:24.5397564Z</NewBookCountDate>
+        <Item xsi:type="ComicSmartListItem" Id="c19add2c-fd3e-4694-85c7-0887abb29685" Name="Recently Added">
+          <NewBookCountDate>2023-11-17T16:56:09.7424322Z</NewBookCountDate>
+          <CacheStorage>Custom</CacheStorage>
           <Display />
           <Matchers>
             <ComicBookMatcher xsi:type="ComicBookAddedMatcher" MatchOperator="3">
@@ -140,8 +144,9 @@
             </ComicBookMatcher>
           </Matchers>
         </Item>
-        <Item xsi:type="ComicSmartListItem" Id="7db606e4-92ec-4824-8823-eb09814c8cab" Name="Recently Read">
-          <NewBookCountDate>2023-11-10T23:25:24.5403012Z</NewBookCountDate>
+        <Item xsi:type="ComicSmartListItem" Id="5c5d0668-29cb-45b2-9e7d-23fc67a34672" Name="Recently Read">
+          <NewBookCountDate>2023-11-17T16:56:09.7437944Z</NewBookCountDate>
+          <CacheStorage>Custom</CacheStorage>
           <Display />
           <Matchers>
             <ComicBookMatcher xsi:type="ComicBookOpenedMatcher" MatchOperator="3">
@@ -149,8 +154,9 @@
             </ComicBookMatcher>
           </Matchers>
         </Item>
-        <Item xsi:type="ComicSmartListItem" Id="9af1e454-8d8d-4ee2-99f9-a7b87afe408f" Name="Never Read">
-          <NewBookCountDate>2023-11-10T23:25:24.540505Z</NewBookCountDate>
+        <Item xsi:type="ComicSmartListItem" Id="2d08a185-549e-42d1-9ac6-5a384765d0ca" Name="Never Read">
+          <NewBookCountDate>2023-11-17T16:56:09.7461198Z</NewBookCountDate>
+          <CacheStorage />
           <Display />
           <Matchers>
             <ComicBookMatcher xsi:type="ComicBookReadPercentageMatcher" MatchOperator="2">
@@ -158,8 +164,9 @@
             </ComicBookMatcher>
           </Matchers>
         </Item>
-        <Item xsi:type="ComicSmartListItem" Id="eb23a11c-6751-4d52-a03f-7832baca5a4d" Name="Reading">
-          <NewBookCountDate>2023-11-10T23:25:24.5393502Z</NewBookCountDate>
+        <Item xsi:type="ComicSmartListItem" Id="dffbbd61-a75c-4932-906a-b82d99b5bf3c" Name="Reading">
+          <NewBookCountDate>2023-11-17T16:56:09.7476702Z</NewBookCountDate>
+          <CacheStorage />
           <Display />
           <Matchers>
             <ComicBookMatcher xsi:type="ComicBookReadPercentageMatcher" MatchOperator="3">
@@ -168,8 +175,9 @@
             </ComicBookMatcher>
           </Matchers>
         </Item>
-        <Item xsi:type="ComicSmartListItem" Id="6656e04b-02be-48df-b207-1d21a9d3e83d" Name="Read">
-          <NewBookCountDate>2023-11-10T23:25:24.5397198Z</NewBookCountDate>
+        <Item xsi:type="ComicSmartListItem" Id="8a30e390-ad76-4421-9b99-86d57af87059" Name="Read">
+          <NewBookCountDate>2023-11-17T16:56:09.748878Z</NewBookCountDate>
+          <CacheStorage />
           <Display />
           <Matchers>
             <ComicBookMatcher xsi:type="ComicBookReadPercentageMatcher" MatchOperator="1">
@@ -177,8 +185,9 @@
             </ComicBookMatcher>
           </Matchers>
         </Item>
-        <Item xsi:type="ComicSmartListItem" Id="8a482ba4-257b-41e5-938c-535ec2a6c0aa" Name="Files to update">
-          <NewBookCountDate>2023-11-10T23:25:24.539353Z</NewBookCountDate>
+        <Item xsi:type="ComicSmartListItem" Id="ec8a27fb-cbc6-4bf7-b2ac-14a52ce8045d" Name="Files to update">
+          <NewBookCountDate>2023-11-17T16:56:09.7502425Z</NewBookCountDate>
+          <CacheStorage />
           <Display />
           <Matchers>
             <ComicBookMatcher xsi:type="ComicBookModifiedInfoMatcher">
@@ -188,14 +197,11 @@
         </Item>
       </Items>
     </Item>
-    <Item xsi:type="ComicListItemFolder" Id="a4956752-8268-4514-86a8-046b108d69cd" Name="Temporary Lists" Temporary="true">
-      <NewBookCountDate>2023-11-10T23:25:52.4650206Z</NewBookCountDate>
+    <Item xsi:type="ComicListItemFolder" Id="14f92e16-c9b0-4d3d-a7a9-d27cb3131ffe" Name="Temporary Lists" Temporary="true">
       <Display />
       <Items />
     </Item>
   </ComicLists>
-  <WatchFolders>
-    <WatchFolder Folder="C:\users\abc\Desktop\comics" />
-  </WatchFolders>
+  <WatchFolders />
   <BlackList />
 </ComicDatabase>
