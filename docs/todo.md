@@ -11,3 +11,5 @@ lowest.
 - [ ] Documentation/testing on importing an existing ComicVine database (not from this project)
 - [ ] Better tagging for dockerhub container
 - [ ] Other misc export/import for things like `ComicDB.xml`, `ComicRack.ini`, etc
+- [ ] Include documentation on how to clean up trash in the container (lest you convert 9k `.cbr` files and fill up your host os's drive
+- [ ] Formal, `incoming` directory mount in the `docker-compose.yml` to allow for easier script/file transfer
